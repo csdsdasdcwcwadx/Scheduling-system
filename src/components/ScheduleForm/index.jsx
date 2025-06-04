@@ -4,8 +4,8 @@ export default function ScheduleForm({
   onRuleChange,
 }) {
   const [timeSlots, setTimeSlots] = useState([
-    { label: '早班', start: '08:00', end: '14:00', required: 1 },
-    { label: '中班', start: '15:00', end: '20:00', required: 1 }
+    // { label: '早班', start: '08:00', end: '14:00', required: 1 },
+    // { label: '中班', start: '15:00', end: '20:00', required: 1 }
   ])
   const [dayOff, setDayOff] = useState([])
   const [scheduleType, setScheduleType] = useState("");
