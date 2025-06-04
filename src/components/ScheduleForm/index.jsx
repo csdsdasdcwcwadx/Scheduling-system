@@ -8,6 +8,7 @@ export default function ScheduleForm({
     { label: '中班', start: '15:00', end: '20:00', required: 1 }
   ])
   const [dayOff, setDayOff] = useState([])
+  const [scheduleType, setScheduleType] = useState("");
 
   const handleAddTimeSlot = () => {
     setTimeSlots([
@@ -39,12 +40,26 @@ export default function ScheduleForm({
   }
 
   useEffect(() => {
-    onRuleChange({ timeSlots, dayOff })
-  }, [timeSlots, dayOff, onRuleChange])
+    onRuleChange({ timeSlots, dayOff, scheduleType })
+  }, [timeSlots, dayOff, onRuleChange, scheduleType])
 
   return (
     <div>
       <h2 className="text-lg font-semibold">📅 排班規則設定</h2>
+
+      <div className='mt-4'>
+        <label className="block font-semibold mt-4">彈性工時制度：</label>
+        <select
+          className="border rounded p-2"
+          value={scheduleType}
+          onChange={(e) => setScheduleType(e.target.value)}
+        >
+          <option value="normal">一般工時（每日 8 小時、每週 40 小時）</option>
+          <option value="twoWeekFlex">二週彈性（兩週 80 小時）</option>
+          <option value="fourWeekFlex">四週彈性（四週 160 小時）</option>
+          <option value="eightWeekFlex">八週彈性（八週 320 小時）</option>
+        </select>
+      </div>
 
       {timeSlots.map((slot, idx) => (
         <div key={idx} className="flex gap-2 items-center mb-2">
