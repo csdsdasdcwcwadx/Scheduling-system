@@ -8,6 +8,7 @@ import { generateSchedule, calculateStats } from './util';
 // 休假問題
 // PT問題
 // 禮拜幾需要比較多人
+// 客製化排班需求
 function App() {
   const [employeeList, setEmployeeList] = useState([]);
   const [scheduleRule, setScheduleRule] = useState(null);
