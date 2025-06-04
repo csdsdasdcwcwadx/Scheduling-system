@@ -10,7 +10,18 @@ export default function EmployeeForm({
 }) {
   const [name, setName] = useState('')
   const [scheduleType, setScheduleType] = useState('一般');
-  const [employees, setEmployees] = useState([])
+  const [employees, setEmployees] = useState([
+    {name: "蔡如安", scheduleType: '一般'},
+    {name: "理權恩", scheduleType: '一般'},
+    {name: "林雅茹", scheduleType: '一般'},
+    {name: "菜種恩", scheduleType: '一般'},
+    {name: "鄧以軒", scheduleType: '一般'},
+    {name: "詹又成", scheduleType: '一般'},
+    {name: "裝置成", scheduleType: '一般'},
+    {name: "徐翊豪", scheduleType: '一般'},
+    {name: "周衍明", scheduleType: '一般'},
+    {name: "范修鴻", scheduleType: '一般'},
+  ])
 
   const addEmployee = () => {
     if (!name.trim()) return
